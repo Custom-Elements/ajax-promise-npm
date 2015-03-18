@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ajax-promise-npm</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="node_modules/polymer/platform.js"></script>
+    <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="import" href="src/ajax-promise.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <p>An example of using <code>&lt;ajax-promise></code>:</p>
+
+    <ajax-promise
+        method="GET"
+        url="data.json"
+        handleAs="json"></ajax-promise>
+
+    <template bind="{{data}}">
+        <div>{{promise}}</div>
+    </template>
+
+    <script>
+        (function() {
+           'use strict';
+            document.addEventListener('polymer-ready', function() {
+                var ajax = document.querySelector('ajax-promise');
+                ajax.request()
+                    .then(function(response) {
+                        document.querySelector('template').model = {
+                            data: response.response
+                        };
+                    }, function(error) {
+                        console.error(error);
+                    });
+            });
+        })();
+    </script>
+  </body>
+</html>

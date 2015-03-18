@@ -1,0 +1,15 @@
+{
+  "name": "ajax-promise-npm",
+  "version": "0.0.0",
+  "dependencies": {
+    "polymer-serve": "git://github.com/custom-elements/polymer-serve",
+    "polymer": "git://github.com/custom-elements/polymer#master",
+    "ui-styles": "git://github.com/custom-elements/ui-styles#master",
+    "ui-fonts": "git://github.com/custom-elements/ui-fonts#master",
+    "core-ajax-npm": "git://github.com/custom-elements/core-ajax-npm#master"
+  },
+  "license": "ISC",
+  "scripts": {
+    "test": "polymer-serve ."
+  }
+}
